@@ -30,19 +30,29 @@
 			        </el-form>
 			      </template>
 			    </el-table-column>
+
 			    <el-table-column
-			      label="姓名"
+			      label="用户名称"
 			      prop="id">
 			    </el-table-column>
 			    <el-table-column
-			      label="训练场"
+			      label="订单类别"
 			      prop="total_amount">
 			    </el-table-column>
+                <el-table-column
+                    label="订单名称"
+                    prop="total_amount">
+                </el-table-column>
+                <el-table-column
+                    label="订单时间"
+                    prop="total_amount">
+                </el-table-column>
 			    <el-table-column
 			      label="电话"
 			      prop="status">
 			    </el-table-column>
 			</el-table>
+
             <div class="Pagination" style="text-align: left;margin-top: 10px;">
                 <el-pagination
                   @size-change="handleSizeChange"

@@ -3,7 +3,7 @@
 	  	<transition name="form-fade" mode="in-out">
 	  		<section class="form_contianer" v-show="showLogin">
 		  		<div class="manage_tip">
-		  			<p>武汉烈焰文化后台管理系统</p>
+		  			<p>北京嗨普瑞</p>
 		  		</div>
 		    	<el-form :model="loginForm" :rules="rules" ref="loginForm">
 					<el-form-item prop="username">
@@ -16,9 +16,9 @@
 				    	<el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
 				  	</el-form-item>
 				</el-form>
-				<p class="tip">武汉烈焰文化提醒您</p>
-				<p class="tip">数据千万条，安全第一条</p>
-				<p class="tip">操作不规范，亲人两行泪</p>
+				<!--<p class="tip">武汉烈焰文化提醒您</p>-->
+				<!--<p class="tip">数据千万条，安全第一条</p>-->
+				<!--<p class="tip">操作不规范，亲人两行泪</p>-->
 	  		</section>
 	  	</transition>
   	</div>

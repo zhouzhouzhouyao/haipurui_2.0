@@ -41,7 +41,7 @@
       </el-table-column>
     </el-table>
 
-    <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />
+    <!--<pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />-->
 
     <el-dialog :visible.sync="dialogVisible" title="编辑信息">
       <el-form :model="role" label-width="80px" label-position="left">
@@ -78,11 +78,11 @@
 </template>
 
 <script>
-import path from 'path'
-import { deepClone } from '@/utils'
-import { getRoutes, getRoles, addRole, deleteRole, updateRole } from '@/api/role'
-import i18n from '@/lang'
-import Pagination from '@/components/Pagination' // Secondary package based on el-pagination
+// import path from 'path'
+// import { deepClone } from '@/utils'
+// import { getRoutes, getRoles, addRole, deleteRole, updateRole } from '@/api/role'
+// import i18n from '@/lang'
+// import Pagination from '@/components/Pagination' // Secondary package based on el-pagination
 
 const defaultRole = {
   id: '',

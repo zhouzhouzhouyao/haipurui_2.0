@@ -20,13 +20,21 @@ const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vue
 const adminSet = r => require.ensure([], () => r(require('@/page/adminSet')), 'adminSet');
 const sendMessage = r => require.ensure([], () => r(require('@/page/sendMessage')), 'sendMessage');
 const explain = r => require.ensure([], () => r(require('@/page/explain')), 'explain');
-const shopp = r => require.ensure([],() => r(require('@page/shopp')),'shopp');
+const shopp = r => require.ensure([],() => r(require('@/page/shopp')),'shopp');
+const ArticleDetail = r => require.ensure([],() => r(require('@/page/ArticleDetail')),'ArticleDetail');
+const  ArticleList = r => require.ensure([],() => r(require('@/page/ArticleList')),'ArticleList');
+const announce = r => require.ensure([],() => r(require('@/page/announce')),'announce');
 
 const routes = [
 	{
 		path: '/',
 		component: login
 	},
+    {
+        path: '/shopp',
+        component: shopp,
+        meta: ['商品分类展示'],
+    },
 	{
 		path: '/manage',
 		component: manage,
@@ -36,80 +44,100 @@ const routes = [
 			component: home,
 			meta: [],
 		},
-        {
-            path: '/shopp',
-            component: shopp,
-            meta: ['商品分类展示'],
-        },
-		{
-			path: '/addShop',
-			component: addShop,
-			meta: ['添加数据', '添加训练场'],
-		},
-		{
-			path: '/addGoods',
-			component: addGoods,
-			meta: ['添加数据', '添加教练'],
-		},
-		{
-			path: '/addadver',
-			component: addGoods,
-			meta: ['添加数据', '添加广告'],
-		},
-		{
-			path: '/userList',
-			component: userList,
-			meta: ['数据管理', '用户列表'],
-		},{
-			path: '/shopList',
-			component: shopList,
-			meta: ['数据管理', '训练场列表'],
-		},{
-			path: '/foodList',
-			component: foodList,
-			meta: ['数据管理', '申请列表'],
-		},
-		{
-			path: '/advertise',
-			component: foodList,
-			meta: ['数据管理', '广告列表'],
-		},{
-			path: '/orderList',
-			component: orderList,
-			meta: ['数据管理', '教练列表'],
-		},{
-			path: '/adminList',
-			component: adminList,
-			meta: ['数据管理', '管理员列表'],
-		},{
-			path: '/visitor',
-			component: visitor,
-			meta: ['图表', '用户分布'],
-		},{
-			path: '/newMember',
-			component: newMember,
-			meta: ['图表', '用户数据'],
-		},{
-			path: '/uploadImg',
-			component: uploadImg,
-			meta: ['文本编辑', 'MarkDown'],
-		},{
-			path: '/vueEdit',
-			component: vueEdit,
-			meta: ['编辑', '文本编辑'],
-		},{
-			path: '/adminSet',
-			component: adminSet,
-			meta: ['设置', '管理员设置'],
-		},{
-			path: '/sendMessage',
-			component: sendMessage,
-			meta: ['设置', '发送通知'],
-		},{
-			path: '/explain',
-			component: explain,
-			meta: ['说明', '说明'],
-		}]
+            {
+                path: '/userList',
+                component: userList,
+                meta: ['商品展示板块'],
+            },
+            {
+                path: '/addShop',
+                component: addShop,
+                meta: ['商品添加板块'],
+            },
+            {
+                path: '/shopList',
+                component: shopList,
+                meta: ['评论展示板块'],
+            },
+            {
+                path: '/explain',
+                component: explain,
+                meta: ['公告展示板块'],
+            },
+            // {
+            //     path: '/addadver',
+            //     component: addGoods,
+            //     meta: ['添加数据', '添加财力'],
+            // },
+            {
+                path: '/ArticleDetail',
+                component: ArticleDetail,
+                meta: ['文章展示板块','创建文章']
+            },
+            {
+              path: '/ArticleList',
+              component: ArticleList,
+              meta: ['文章展示板块','文章列表']
+            },
+            {
+                path: '/foodList',
+                component: foodList,
+                meta: ['用户问卷展示'],
+            },
+            {
+                path: '/orderList',
+                component: orderList,
+                meta: ['用户订单展示'],
+            },
+            {
+                path: '/addGoods',
+                component: addGoods,
+                meta: ['文件添加板块'],
+            },
+		// {
+		// 	path: '/userList',
+		// 	component: userList,
+		// 	meta: ['数据管理', '用户列表'],
+		// },
+		// {
+		// 	path: '/advertise',
+		// 	component: foodList,
+		// 	meta: ['数据管理', '广告列表'],
+		// },{
+		// 	path: '/adminList',
+		// 	component: adminList,
+		// 	meta: ['数据管理', '管理员列表'],
+		// },
+         //    {
+		// 	path: '/visitor',
+		// 	component: visitor,
+		// 	meta: ['图表', '用户分布'],
+		// },{
+		// 	path: '/newMember',
+		// 	component: newMember,
+		// 	meta: ['图表', '用户数据'],
+		// },{
+		// 	path: '/uploadImg',
+		// 	component: uploadImg,
+		// 	meta: ['文本编辑', 'MarkDown'],
+		// },{
+		// 	path: '/vueEdit',
+		// 	component: vueEdit,
+		// 	meta: ['编辑', '文本编辑'],
+		// },{
+		// 	path: '/adminSet',
+		// 	component: adminSet,
+		// 	meta: ['设置', '管理员设置'],
+		// },{
+		// 	path: '/sendMessage',
+		// 	component: sendMessage,
+		// 	meta: ['设置', '发送通知'],
+		// },{
+		// 	path: '/explain',
+		// 	component: explain,
+		// 	meta: ['说明', '说明'],
+		// }
+        ]
 	}
 ]
 

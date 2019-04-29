@@ -27,18 +27,28 @@
                     </el-form>
                   </template>
                 </el-table-column>
+
                 <el-table-column
-                  label="姓名"
+                  label="用户名称"
                   prop="name">
                 </el-table-column>
                 <el-table-column
-                  label="电话"
+                  label="问卷类别"
                   prop="description">
                 </el-table-column>
                 <el-table-column
-                  label="申请类别"
+                    label="问卷描述"
+                    prop="description">
+                </el-table-column>
+                <el-table-column
+                    label="问卷时间"
+                    prop="description">
+                </el-table-column>
+                <el-table-column
+                  label="操作"
                   prop="rating">
                 </el-table-column>
+
 <!-- 这里不需要进行什么类别操作 -->
                 <!-- <el-table-column label="操作" width="160">
                   <template slot-scope="scope">

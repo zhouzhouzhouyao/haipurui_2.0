@@ -5,35 +5,40 @@
         <el-row style="margin-top: 20px;">
   			<el-col :span="12" :offset="4">
 		        <el-form :model="formData" :rules="rules" ref="formData" label-width="110px" class="demo-formData">
-					<el-form-item label="训练场名称" prop="name">
+					<el-form-item label="商品名称" prop="name">
 						<el-input v-model="formData.name"></el-input>
 					</el-form-item>
-					<el-form-item label="详细地址" prop="address">
-						<el-autocomplete
-						  v-model="formData.address"
-						  :fetch-suggestions="querySearchAsync"
-						  placeholder="请输入地址"
-						  style="width: 100%;"
-						  @select="addressSelect"
-						></el-autocomplete>
-						<span>当前城市：{{city.name}}</span>
-					</el-form-item>
+                    <el-form-item label="商品类型" prop="Type">
+                        <el-input v-model="formData.Type"></el-input>
+                    </el-form-item>
+                    <el-form-item label="商品介绍" prop="address">
+                        <el-input v-model="formData.address" type="textarea"></el-input>
+                    </el-form-item>
+					<!--<el-form-item label="详细地址" prop="address">-->
+						<!--<el-autocomplete-->
+						  <!--v-model="formData.address"-->
+						  <!--:fetch-suggestions="querySearchAsync"-->
+						  <!--placeholder="商品介绍"-->
+						  <!--style="width: 100%;"-->
+						  <!--@select="addressSelect"-->
+						<!--&gt;</el-autocomplete>-->
+					<!--</el-form-item>-->
 
-					<el-form-item label="联系电话" prop="phone">
-						<el-input v-model.number="formData.phone" maxLength="11"></el-input>
+					<!--<el-form-item label="价格" prop="phone">-->
+						<!--<el-input v-model.number="formData.phone" maxLength="11"></el-input>-->
+                    <!--</el-form-item>-->
+					<el-form-item label="价格" prop="description">
+						<el-input v-model="formData.phone"></el-input>
 					</el-form-item>
-					<el-form-item label="训练场简介" prop="description">
-						<el-input v-model="formData.description"></el-input>
-					</el-form-item>
-					<el-form-item label="训练场负责人" prop="promotion_info">
+					<el-form-item label="上线时间" prop="promotion_info">
 						<el-input v-model="formData.promotion_info"></el-input>
 					</el-form-item>
-					<el-form-item label="训练场经度" prop="promotion_info">
-						<el-input v-model="formData.promotion_info"></el-input>
-					</el-form-item>
-					<el-form-item label="训练场纬度" prop="promotion_info">
-						<el-input v-model="formData.promotion_info"></el-input>
-					</el-form-item>
+					<!--<el-form-item label="训练场经度" prop="promotion_info">-->
+						<!--<el-input v-model="formData.promotion_info"></el-input>-->
+					<!--</el-form-item>-->
+					<!--<el-form-item label="训练场纬度" prop="promotion_info">-->
+						<!--<el-input v-model="formData.promotion_info"></el-input>-->
+					<!--</el-form-item>-->
 
 					<!-- <el-form-item label="店铺分类">
 						<el-cascader
@@ -58,12 +63,12 @@
 						<span>开发票</span>
 						<el-switch on-text="" off-text="" v-model="formData.piao"></el-switch>
 					</el-form-item> -->
-					<!-- <el-form-item label="配送费" prop="float_delivery_fee">
-						<el-input-number v-model="formData.float_delivery_fee" :min="0" :max="20"></el-input-number>
-					</el-form-item>
-					<el-form-item label="起送价" prop="float_minimum_order_amount">
-						<el-input-number v-model="formData.float_minimum_order_amount" :min="0" :max="100"></el-input-number>
-					</el-form-item> -->
+					 <!--<el-form-item label="配送费" prop="float_delivery_fee">-->
+						<!--<el-input-number v-model="formData.float_delivery_fee" :min="0" :max="20"></el-input-number>-->
+					<!--</el-form-item>-->
+					<!--<el-form-item label="起送价" prop="float_minimum_order_amount">-->
+						<!--<el-input-number v-model="formData.float_minimum_order_amount" :min="0" :max="100"></el-input-number>-->
+					<!--</el-form-item>-->
 					<!-- <el-form-item label="营业时间" style="white-space: nowrap;">
 						<el-time-select
 							placeholder="起始时间"
@@ -86,7 +91,7 @@
 						</el-time-select>
 					</el-form-item> -->
 
-					<el-form-item label="上传训练场图片">
+					<el-form-item label="上传商品图片">
 						<el-upload
 						  class="avatar-uploader"
 						  :action="baseUrl + '/v1/addimg/shop'"
@@ -164,7 +169,7 @@
 					</el-table> -->
 
 					<el-form-item class="button_submit">
-						<el-button type="primary" @click="submitForm('formData')">立即创建</el-button>
+						<el-button type="primary" @click="submitForm('formData')">立即添加</el-button>
 					</el-form-item>
 				</el-form>
   			</el-col>
@@ -205,14 +210,17 @@
 		        },
 		        rules: {
 					name: [
-						{ required: true, message: '请输入店铺名称', trigger: 'blur' },
+						{ required: true, message: '请输入商品名称', trigger: 'blur' },
 					],
+                    Type: [
+                        { required: true, message: '请输入商品类型', trigger: 'blur' },
+                    ],
 					address: [
-						{ required: true, message: '请输入详细地址', trigger: 'blur' }
+						{ required: true, message: '请输入商品介绍', trigger: 'blur' }
 					],
 					phone: [
-						{ required: true, message: '请输入联系电话' },
-						{ type: 'number', message: '电话号码必须是数字' }
+						{ required: true, message: '请输入价格' },
+						{ type: 'number', message: '必须是数字' }
 					],
 				},
 				options: [{

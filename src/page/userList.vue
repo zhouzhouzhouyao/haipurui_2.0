@@ -33,17 +33,33 @@
 			    </el-table-column>
 
 			    <el-table-column
-			      label="用户名"
-			      prop="id">
+			      label="序号"
+			      prop="goodId">
 			    </el-table-column>
+                <el-table-column
+                    label="商品类型"
+                    prop="goodTypeId">
+                </el-table-column>
+                <el-table-column
+                    label="商品名称"
+                    prop="goodName">
+                </el-table-column>
 			    <el-table-column
-			      label="用户套餐"
+			      label="商品介绍"
 			      prop="total_amount">
 			    </el-table-column>
 			    <el-table-column
-			      label="购买时间"
-			      prop="status">
+			      label="价格"
+			      prop="PRICE">
 			    </el-table-column>
+                <el-table-column
+                    label="商品图片"
+                    prop="goodImg">
+                </el-table-column>
+                <el-table-column
+                    label="上线时间"
+                    prop="onlineTime">
+                </el-table-column>
                 <el-table-column
 			      label="绑定教练"
 			      prop="teacher">
@@ -121,15 +137,13 @@
 			</el-dialog>
 
 
-
-
         </div>
     </div>
 </template>
 
 <script>
     import headTop from '../components/headTop'
-    import {getOrderList, getOrderCount, getResturantDetail, getUserInfo, getAddressById} from '@/api/getData'
+    import { getOrderList, getOrderCount, getResturantDetail, getUserInfo, getAddressById} from '@/api/getData'
     export default {
         data(){
             return {
@@ -137,7 +151,7 @@
                 currentRow: null,
                 offset: 0,
                 limit: 20,
-                count: 0,
+                count: 10,
                 currentPage: 1,
                 restaurant_id: null,
                 expendRow: [],
@@ -183,8 +197,12 @@
                 console.log(Orders.list);
                 Orders.list.forEach((item, index) => {
                     const tableData = {};
-                    tableData.id = item.fname;
-                    tableData.user_name = item.fname;
+                    tableData.goodId = item.goodid;
+                    tableData.goodTypeId = item.goodtypeId;
+                    tableData.goodName = item.goodname;
+                    tableData.PRICE = item.price;
+                    tableData.goodImg = item.goodimg;
+                    tableData.onlineTime = item.onlinetime;
                     tableData.total_amount = item.fpack;
                     tableData.status = item.fteacher;
                     tableData.restaurant_id = item.fqq;
@@ -192,7 +210,7 @@
                     tableData.restaurant_address = item.faddress;
                     tableData.restaurant_name = item.faddress;
                     tableData.address_id = item.fqq;
-                    tableData.address = item.ftel
+                    tableData.address = item.ftel;
                     tableData.index = index;
                     tableData.teacher=item.teacher;
 

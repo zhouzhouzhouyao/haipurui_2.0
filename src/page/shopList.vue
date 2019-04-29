@@ -39,29 +39,33 @@
 
 
                 <el-table-column
-                  label="训练场 ID"
+                  label="商品名称"
                   prop="name">
                 </el-table-column>
                 <el-table-column
-                  label="训练场"
+                  label="评论时间"
                   prop="address">
                 </el-table-column>
                 <el-table-column
-                  label="训练场地址"
+                  label="用户昵称"
                   prop="description">
+                </el-table-column>
+                <el-table-column
+                    label="评论内容"
+                    prop="comment">
                 </el-table-column>
 
 
                 <el-table-column label="操作" width="200">
                   <template slot-scope="scope">
-                    <el-button
-                      size="mini"
-                      @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                    <el-button
-                      size="mini"
-                      type="Success"
-                      @click="addFood(scope.$index, scope.row)">添加</el-button>
-                    
+                    <!--<el-button-->
+                      <!--size="mini"-->
+                      <!--@click="handleEdit(scope.$index, scope.row)">编辑</el-button>-->
+                    <!--<el-button-->
+                      <!--size="mini"-->
+                      <!--type="Success"-->
+                      <!--@click="addFood(scope.$index, scope.row)">添加</el-button>-->
+
                     <el-button
                       size="mini"
                       type="danger"
@@ -82,7 +86,7 @@
             </div>
 
             <!-- 这里是点击编辑的时候跳出的页面 -->
-            <el-dialog title="修改训练场信息" v-model="dialogFormVisible">
+            <el-dialog title="修改评论信息" v-model="dialogFormVisible">
                 <el-form :model="selectTable">
                     <el-form-item label="训练场" label-width="100px">
                         <el-input v-model="selectTable.name" auto-complete="off"></el-input>
@@ -96,7 +100,7 @@
                           style="width: 100%;"
                           @select="addressSelect"
                         ></el-autocomplete>
-                        
+
                         <span>当前城市：{{city.name}}</span>
                     </el-form-item>
 

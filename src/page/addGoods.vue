@@ -38,22 +38,22 @@
 					</div>
 	  			</el-form> -->
 
-	  			<header class="form_header">添加教练</header>
+	  			<header class="form_header">添加文件</header>
 	  			<el-form :model="foodForm" :rules="foodrules" ref="foodForm" label-width="110px" class="form food_form">
-	  				<el-form-item label="教练训练场" prop="name">
+	  				<el-form-item label="文件名称" prop="name">
 						<el-input v-model="foodForm.name"></el-input>
 					</el-form-item>
-					<el-form-item label="教练姓名" prop="activity">
+					<el-form-item label="文件类型" prop="activity">
 						<el-input v-model="foodForm.activity"></el-input>
 					</el-form-item>
-					<el-form-item label="教练介绍" prop="description">
+					<el-form-item label="文件介绍" prop="description">
 						<el-input v-model="foodForm.description"></el-input>
 					</el-form-item>
-						<el-form-item label="教练电话" prop="description">
+						<el-form-item label="上传时间" prop="description">
 						<el-input v-model="foodForm.description"></el-input>
 					</el-form-item>
-					
-					<el-form-item label="上传教练图片">
+
+					<el-form-item label="上传文件">
 						<el-upload
 						  class="avatar-uploader"
 						  :action="baseUrl + '/v1/addimg/food'"
@@ -207,7 +207,7 @@
     			this.restaurant_id = Math.ceil(Math.random()*10);
     			this.$msgbox({
 		          title: '提示',
-		          message: '欢迎添加教练',
+		          message: '欢迎添加文件',
 		          showCancelButton: true,
 		          confirmButtonText: '确定',
 		          cancelButtonText: '取消',

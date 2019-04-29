@@ -204,7 +204,7 @@ export const getUserCount = data => fetch('/v1/users/count', data);
  */
 
 // export const getOrderList = data => fetch('/bos/orders', data);
-export const getOrderList = () => fetch('/formget');
+export const getOrderList = () => fetch('/goodsget');
 
 /**
  * 获取订单数量
